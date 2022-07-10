@@ -1,10 +1,27 @@
+<ng-template [ngIf]="blueClass">
+  <p>Button is blue. </p>
+</ng-template>
+<!-- Shorthand way of structural directive -->
+<p *ngIf="blueClass">Button is blue. </p>
+
+<button 
+ (click)="blueClass = !blueClass"
+ [ngClass]="{blue: blueClass}"
+ [ngStyle]="{'font-size.px': fontSize}"
+ >Change</button> 
+
+<hr>
+
 <input (keyup)="changeImage($event)" [value]="imageUrl" type="text">
 
-<app-post [img]="imageUrl" (imgSelected)="logImg($event)">
-  <p>Some Caption</p>
+<app-post 
+ *ngFor="let todo of todos; let i = index" 
+ [img]="imageUrl" (imgSelected)="logImg($event)"
+>
+  <p>{{i}} {{todo}}</p>
 </app-post>
 
-<p>Hello {{name.toUpperCase()}}</p>
-<p>Hello {{getName().toUpperCase()}}</p>
+<p>Hello {{name | uppercase}}</p>
+<p>{{ currentDate | date: 'MMMM d y' }}</p>
 
 

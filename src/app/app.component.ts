@@ -9,6 +9,12 @@ export class AppComponent {
   name = 'Rajesh';
   imageUrl = 'https://i.picsum.photos/id/237/500/500.jpg?hmac=idOEkrJhLd7nEU5pNrAGCyJ6HHJdR_sit1qDt5J3Wo0'; 
   imageSrc = "A puppy";
+  currentDate = new Date();
+  blueClass = false;
+  fontSize = 16;
+  todos = [
+    'Go to gym', 'Learn Angular', 'Complete a project'
+  ];
 
   getName() {
     return this.name;
